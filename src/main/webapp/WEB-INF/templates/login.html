@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Login</title>
+</head>
+<body>
+    <div th:if="${loginError != null}" th:text="${loginError}">Invalid email or password</div>
+     <div th:if="${logout != null}" th:text="${logout}">You have been logged out</div>
+	<form action="#" th:action="@{/login}" th:object="${user}" method="post">
+	   
+	   <input type="text" th:field="*{email}" placeholder="Email" />
+	   <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Invalid email</p>
+	   
+	   <input type="text" th:field="*{password}" placeholder="Password" />
+	   <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Invalid password</p>
+
+	   <input type="submit" value="Login"/>
+	</form>
+</body>
+</html>

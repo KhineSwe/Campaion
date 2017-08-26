@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title th:text="#{welcome.title}"></title>
+</head>
+<body>
+	Language:
+
+	<a href="?language=en">English</a>
+	<a href="?language=ja">日本語</a>
+	<h1 th:text="#{welcome.message}"></h1>
+	<span th:text="#{welcome.time}"></span>
+	<span th:text="${serverTime}" th:remove="tag"></span>
+	<span th:text="#{welcome.servertime}"></span>
+</body>
+</html>

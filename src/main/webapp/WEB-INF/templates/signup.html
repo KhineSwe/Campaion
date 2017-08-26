@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Signup</title>
+</head>
+<body>
+	<form action="#" th:action="@{/signup}" th:object="${user}" method="post">
+	   <input type="text" th:field="*{firstName}" placeholder="First Name"/>
+	   <span th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">Invalid user name</span>
+	   <br/>
+	   <input type="text" th:field="*{lastName}" placeholder="Last Name"/>
+	   <span th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Invalid user name</span>
+	   <br/>
+	   <input type="text" th:field="*{email}" placeholder="Email" />
+	   <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Invalid email</span>
+	   <br/>
+	   <input type="text" th:field="*{password}" placeholder="Password" />
+	   <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Invalid password</span>
+	   <br/>
+	   <input type="text" th:field="*{confirmedPassword}" placeholder="Confirm Password" />
+	   <span th:if="${#fields.hasErrors('confirmedPassword')}" th:errors="*{confirmedPassword}">Passwords do not match</span>
+	   <br/>
+	   <input type="submit" value="Signup"/>
+	</form>
+</body>
+</html>
